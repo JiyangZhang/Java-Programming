@@ -7,21 +7,26 @@
  */
 public class part1 {
     private class innerPart1 {
+        /** test for inner class.
+         *  Test method
+         */
         private void testInner() {
             System.out.println("Test the parser.");
         }
     }
+    
+    /** This is findStopCodon method */
     public int findStopCodon(int startIndex, String dna){
         int taaIndex = dna.indexOf("TAA", startIndex+1);
-        if (taaIndex == -1 
-            || (taaIndex - startIndex) % 3 != 0) taaIndex = dna.length();
+        if (taaIndex == -1
+                || (taaIndex - startIndex) % 3 != 0) taaIndex = dna.length();
         int tagIndex = dna.indexOf("TAG", startIndex+1);
         if(tagIndex == -1
-            || (tagIndex - startIndex) % 3 != 0) tagIndex = dna.length();
+                || (tagIndex - startIndex) % 3 != 0) tagIndex = dna.length();
         int tgaIndex = dna.indexOf("TGA", startIndex+1);
         if(tgaIndex == -1
-            || (tgaIndex - startIndex) % 3 != 0) tgaIndex = dna.length();
-        
+                || (tgaIndex - startIndex) % 3 != 0) tgaIndex = dna.length();
+
         int minIndex = Math.min(taaIndex, tagIndex);
         minIndex = Math.min(minIndex, tgaIndex);
         if (minIndex == dna.length()) return -1;
