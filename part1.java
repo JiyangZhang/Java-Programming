@@ -6,6 +6,11 @@
  * @version (a2018.03.13)
  */
 public class part1 {
+    private class innerPart1 {
+        private void testInner() {
+            System.out.println("Test the parser.");
+        }
+    }
     public int findStopCodon(int startIndex, String dna){
         int taaIndex = dna.indexOf("TAA", startIndex+1);
         if (taaIndex == -1 
